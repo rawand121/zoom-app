@@ -74,8 +74,7 @@ function addVideoStream(video, stream) {
     image_format: "jpeg",
     jpeg_quality: 90,
   });
-  Webcam.attach(videoGrid);
-
+ 
   video.srcObject = stream;
   video.addEventListener("loadedmetadata", () => {
     video.play();
