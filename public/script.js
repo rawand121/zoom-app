@@ -68,18 +68,18 @@ function connectToNewUser(userId, stream) {
 }
 
 function addVideoStream(video, stream) {
-  // video.srcObject = stream;
-  // video.addEventListener("loadedmetadata", () => {
-  //   video.play();
-  // });
-  // videoGrid.append(video);
   Webcam.set({
     width: 320,
     height: 240,
     image_format: "jpeg",
     jpeg_quality: 90,
   });
-  Webcam.attach("#photo");
+  Webcam.attach(video);
+  video.srcObject = stream;
+  video.addEventListener("loadedmetadata", () => {
+    video.play();
+  });
+  videoGrid.append(video);
 }
 
 const scrollToBottom = () => {
