@@ -1,25 +1,25 @@
 body {
   background-color: #e3e3e3;
 }
-.main {
+.screen {
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
   font-family: cursive;
 }
 
-.main__left {
+.screemVideo {
   position: relative;
   flex: 0.8;
   display: flex;
   flex-direction: column;
 }
 
-.main__right {
+.screenChat {
   flex: 0.2;
 }
 
-.main__videos {
+.Videos {
   flex-grow: 1;
   background-color: #eee;
   display: flex;
@@ -28,27 +28,27 @@ body {
   padding: 40px;
 }
 
-.main__controls {
+.allControllers {
   background-color: #eee;
 }
 
-.main__right {
+.screenChat {
   background-color: #d5ffae;
   border-left: 3px solid #d5ffae;
 }
 
-.main__controls {
+.allControllers {
   color: #29372a;
   display: flex;
   justify-content: space-around;
   padding: 4px;
 }
 
-.main__controls__block {
+.actionControllers {
   display: flex;
 }
 
-.main__controls__button {
+.controllerBTN {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,28 +59,28 @@ body {
   transition: all 0.5s;
 }
 
-.main__controls__button:hover {
+.controllerBTN:hover {
   background-color: #fefefe;
   color: #323232;
   border-radius: 5px;
 }
 
-.main__controls__button i {
+.controllerBTN i {
   font-size: 24px;
 }
 
-.main__right {
+.screenChat {
   display: flex;
   flex-direction: column;
 }
 
-.main__header {
+.chatHeader {
   padding-top: 5px;
   color: #1f1f1f;
   text-align: center;
 }
 
-.main__chat_window {
+.allChats {
   flex-grow: 1;
   overflow-y: auto;
 }
@@ -90,11 +90,11 @@ body {
   list-style: none;
 }
 
-.main__message_container {
+.sendNewMessage {
   padding: 22px 12px;
 }
 
-.main__message_container input {
+.sendNewMessage input {
   background-color: transparent;
   padding: 10px;
   border: none;
@@ -118,11 +118,11 @@ body {
   .main {
     flex-direction: column;
   }
-  .main__left {
+  .screemVideo {
     flex: 2;
   }
 
-  .main__right {
+  .screenChat {
     flex: 1;
   }
 }

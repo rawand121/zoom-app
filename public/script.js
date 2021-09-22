@@ -1,5 +1,6 @@
 const socket = io("/");
-const videoGrid = document.getElementById("photo");
+const videoGrid = document.getElementById("video-chat");
+const time = document.getElementById("time");
 
 const myPeer = new Peer(undefined, {
   path: "/peerjs",
@@ -68,18 +69,12 @@ function connectToNewUser(userId, stream) {
 }
 
 function addVideoStream(video, stream) {
-  // video.srcObject = stream;
-  // video.addEventListener("loadedmetadata", () => {
-  //   video.play();
-  // });
-  // videoGrid.append(video);
-  Webcam.set({
-    width: 320,
-    height: 240,
-    image_format: "jpeg",
-    jpeg_quality: 90,
+  video.srcObject = stream;
+  video.addEventListener("loadedmetadata", () => {
+    video.play();
   });
-  Webcam.attach("#photo");
+
+  videoGrid.append(video);
 }
 
 const scrollToBottom = () => {
@@ -99,7 +94,6 @@ const muteUnmute = () => {
 };
 
 const playStop = () => {
-  console.log("object");
   let enabled = myVideoStream.getVideoTracks()[0].enabled;
   if (enabled) {
     myVideoStream.getVideoTracks()[0].enabled = false;
@@ -115,7 +109,7 @@ const setMuteButton = () => {
     <i class="fas fa-microphone"></i>
     <span>Mute</span>
   `;
-  document.querySelector(".main__mute_button").innerHTML = html;
+  document.querySelector(".muteBTN").innerHTML = html;
 };
 
 const setUnmuteButton = () => {
@@ -123,7 +117,7 @@ const setUnmuteButton = () => {
     <i class="unmute fas fa-microphone-slash"></i>
     <span>Unmute</span>
   `;
-  document.querySelector(".main__mute_button").innerHTML = html;
+  document.querySelector(".muteBTN").innerHTML = html;
 };
 
 const setStopVideo = () => {
@@ -131,7 +125,7 @@ const setStopVideo = () => {
     <i class="fas fa-video"></i>
     <span>Stop Video</span>
   `;
-  document.querySelector(".main__video_button").innerHTML = html;
+  document.querySelector(".videoBTN").innerHTML = html;
 };
 
 const setPlayVideo = () => {
@@ -139,15 +133,25 @@ const setPlayVideo = () => {
   <i class="stop fas fa-video-slash"></i>
     <span>Play Video</span>
   `;
-  document.querySelector(".main__video_button").innerHTML = html;
+  document.querySelector(".videoBTN").innerHTML = html;
 };
+
+let [seconds, minutes, hours] = [0, 0, 0];
+setInterval(() => {
+  seconds++;
+  if (seconds === 60) {
+    seconds = 0;
+    minutes++;
+  }
+  if (minutes === 60) {
+    minutes = 0;
+    hours++;
+  }
+  let h = hours >= 10 ? hours : "0" + hours;
+  let m = minutes >= 10 ? minutes : "0" + minutes;
+  let s = seconds >= 10 ? seconds : "0" + seconds;
+  time.innerHTML = ` ${h} : ${m} : ${s}  `;
+}, 1000);
 
 // TAKE SCREEN SHOT
-
-const TakeScreenShot = () => {
-  Webcam.snap(function (data_uri) {
-    // display results in page
-    document.getElementById("output").innerHTML =
-      '<img src="' + data_uri + '"/>';
-  });
-};
+const TakeScreenShot = () => {};

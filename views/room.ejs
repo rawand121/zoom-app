@@ -46,7 +46,7 @@
 
     <script src="script.js" defer></script>
     <style>
-      #photo {
+      #video-chat {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -62,56 +62,42 @@
     </style>
   </head>
   <body>
-    <div class="main">
-      <div class="main__left">
-        <h2 class="meetGroup">The team</h2>
-        <div class="main__videos">
-          <div id="photo"></div>
+    <div class="screen">
+      <div class="screemVideo">
+        <h2 class="meetGroup">The Team</h2>
+        <div class="Videos">
+          <div id="video-chat"></div>
         </div>
-        <div class="main__controls">
-          <div class="main__controls__block">
-            <div
-              id="mute"
-              onclick="muteUnmute()"
-              class="main__controls__button main__mute_button"
-            >
+        <div class="allControllers">
+          <div class="actionControllers">
+            <div id="mute" onclick="muteUnmute()" class="controllerBTN muteBTN">
               <i class="fas fa-microphone"></i>
               <span>Mute</span>
             </div>
-            <div
-              onclick="playStop()"
-              class="main__controls__button main__video_button"
-            >
+            <div onclick="playStop()" class="controllerBTN videoBTN">
               <i class="fas fa-video"></i>
               <span>Stop Video</span>
             </div>
           </div>
-          <div class="main__controls__block">
-            <div onclick="TakeScreenShot()" class="main__controls__button">
-              <i class="fas fa-camera"></i> <span>Take Screenshot</span>
+          <div class="actionControllers">
+            <div class="controllerBTN ml-3">
+              <i class="fas fa-clock"></i>
+              <span id="time"></span>
             </div>
-            <!-- <div
-              onclick="playStop()"
-              class="main__controls__button main__video_button"
-            >
-              <i class="fas fa-video"></i>
-              <span>Stop Video</span>
-            </div> -->
           </div>
         </div>
       </div>
-      <div class="main__right">
-        <div class="main__header">
+      <div class="screenChat">
+        <div class="chatHeader">
           <h2>Messages</h2>
         </div>
-        <div class="main__chat_window">
+        <div class="allChats">
           <ul class="messages"></ul>
         </div>
-        <div class="main__message_container">
+        <div class="sendNewMessage">
           <input id="chat_message" type="text" placeholder="Your Message" />
         </div>
       </div>
     </div>
-    <div id="output"></div>
   </body>
 </html>
