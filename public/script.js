@@ -74,13 +74,13 @@ function addVideoStream(video, stream) {
     image_format: "jpeg",
     jpeg_quality: 90,
   });
-  Webcam.attach(video);
+  Webcam.attach(videoGrid);
+
   video.srcObject = stream;
   video.addEventListener("loadedmetadata", () => {
     video.play();
   });
-  videoGrid.append(video);
-}
+  videoGrid.append(video);}
 
 const scrollToBottom = () => {
   var d = $(".main__chat_window");
