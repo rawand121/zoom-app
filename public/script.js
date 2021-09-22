@@ -69,6 +69,7 @@ function connectToNewUser(userId, stream) {
 }
 
 function addVideoStream(video, stream) {
+<<<<<<< HEAD
   video.srcObject = stream;
   video.addEventListener("loadedmetadata", () => {
     video.play();
@@ -76,6 +77,20 @@ function addVideoStream(video, stream) {
 
   videoGrid.append(video);
 }
+=======
+  Webcam.set({
+    width: 320,
+    height: 240,
+    image_format: "jpeg",
+    jpeg_quality: 90,
+  });
+ 
+  video.srcObject = stream;
+  video.addEventListener("loadedmetadata", () => {
+    video.play();
+  });
+  videoGrid.append(video);}
+>>>>>>> b8c604a8841053f42ed0f0aca007e26ae8db282c
 
 const scrollToBottom = () => {
   var d = $(".main__chat_window");
