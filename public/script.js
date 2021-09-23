@@ -81,7 +81,7 @@ function addVideoStream(video, stream) {
 }
 
 const scrollToBottom = () => {
-  var d = $(".allChats");
+  var d = $(".messages");
   d.scrollTop(d.prop("scrollHeight"));
 };
 
