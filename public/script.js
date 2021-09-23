@@ -80,10 +80,10 @@ function addVideoStream(video, stream) {
   videoGrid.append(video);
 }
 
-const scrollToBottom = () => {
-  var d = $(".allChats");
-  d.scrollTop(d.prop("scrollHeight"));
-};
+// const scrollToBottom = () => {
+//   var d = $(".allChats");
+//   d.scrollTop(d.prop("scrollHeight"));
+// };
 
 const muteUnmute = () => {
   const enabled = myVideoStream.getAudioTracks()[0].enabled;
