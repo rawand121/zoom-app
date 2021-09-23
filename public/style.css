@@ -81,7 +81,8 @@ body {
 }
 
 .allChats {
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  height: 80vh;
   overflow-y: scroll;
 }
 
