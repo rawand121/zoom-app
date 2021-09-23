@@ -82,14 +82,12 @@ body {
 
 .allChats {
   flex-grow: 1;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .messages {
   color: #1f1f1f;
   list-style: none;
-  height: 75vh;
-  overflow-y: scroll;
 }
 
 .sendNewMessage {
