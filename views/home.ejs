@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home</title>
     <script>
       const roomId = "<%= roomId %>";
     </script>
@@ -35,12 +35,12 @@
   <body>
     <h1 class="text-center mt-2">Zoom-Clone</h1>
     <div class="container">
-      <div class="row" style="height: 80vh; display: flex; align-items: center">
+      <div class="row mainHomePage">
         <div class="col-sm-12 col-md-6">
           <h2>Now you can start your meeting super easy</h2>
-          <p class="my-5" style="font-size: 20px; color: #1f1f1f">
+          <p class="my-5 aboutApp">
             First create new meeting then you can share the link to anyone you
-            want join with you.. NICE METTING
+            want join with you.. HAVE A NICE METTING
           </p>
           <a href="/<%=roomId%>" class="btn btn-lg text-white btn-primary"
             >Start Metting</a
@@ -62,7 +62,7 @@
           />
         </div>
       </div>
-      <hr style="height: 1px; background-color: #1f1f1f" />
+      <hr />
 
       <!-- FOOTER  -->
       <div class="d-flex justify-content-around my-4">
@@ -78,25 +78,25 @@
           <div class="myAccount mx-2">
             <a
               href="https://www.facebook.com/rawand.rebwar.794/"
-              style="display: block"
+              class="d-block"
             >
-              <i class="fab fa-facebook" style="font-size: 2rem"></i>
-            </a>
-          </div>
-          <div class="myAccount mx-2">
-            <a
-              href="https://www.youtube.com/channel/UCKGmPg4IUmWwsg_Id7BY-Hg"
-              style="display: block"
-            >
-              <i class="fab fa-linkedin" style="font-size: 2rem"></i>
+              <i class="fab fa-facebook contactIcons"></i>
             </a>
           </div>
           <div class="myAccount mx-2">
             <a
               href="https://www.linkedin.com/in/rawand-rebwar-86a579220/"
-              style="display: block"
+              class="d-block"
             >
-              <i class="fab fa-youtube" style="font-size: 2rem"></i>
+              <i class="fab fa-linkedin contactIcons"></i>
+            </a>
+          </div>
+          <div class="myAccount mx-2">
+            <a
+              href="https://www.youtube.com/channel/UCKGmPg4IUmWwsg_Id7BY-Hg"
+              class="d-block"
+            >
+              <i class="fab fa-youtube contactIcons"></i>
             </a>
           </div>
         </div>
