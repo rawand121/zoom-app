@@ -88,6 +88,8 @@ body {
 .messages {
   color: #1f1f1f;
   list-style: none;
+  height: 90vh;
+  overflow-y: scroll;
 }
 
 .sendNewMessage {
