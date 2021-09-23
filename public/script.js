@@ -7,7 +7,7 @@ const peer = new Peer(undefined, {
   host: "/",
   port: "443",
 });
-let myVideoStream;
+let videoStream;
 const myVideo = document.createElement("video");
 myVideo.muted = true;
 
@@ -20,7 +20,7 @@ navigator.mediaDevices
     audio: true,
   })
   .then((stream) => {
-    myVideoStream = stream;
+    videoStream = stream;
     addVideoStream(myVideo, stream);
     peer.on("call", (call) => {
       call.answer(stream);
@@ -80,63 +80,63 @@ function addVideoStream(video, stream) {
   videoGrid.append(video);
 }
 
-// const scrollToBottom = () => {
-//   var d = $(".allChats");
-//   d.scrollTop(d.prop("scrollHeight"));
-// };
+const scrollToBottom = () => {
+  var d = $(".allChats");
+  d.scrollTop(d.prop("scrollHeight"));
+};
 
 const muteUnmute = () => {
-  const enabled = myVideoStream.getAudioTracks()[0].enabled;
+  const enabled = videoStream.getAudioTracks()[0].enabled;
   if (enabled) {
-    myVideoStream.getAudioTracks()[0].enabled = false;
+    videoStream.getAudioTracks()[0].enabled = false;
     setUnmuteButton();
   } else {
     setMuteButton();
-    myVideoStream.getAudioTracks()[0].enabled = true;
+    videoStream.getAudioTracks()[0].enabled = true;
   }
 };
 
 const playStop = () => {
-  let enabled = myVideoStream.getVideoTracks()[0].enabled;
+  let enabled = videoStream.getVideoTracks()[0].enabled;
   if (enabled) {
-    myVideoStream.getVideoTracks()[0].enabled = false;
+    videoStream.getVideoTracks()[0].enabled = false;
     setPlayVideo();
   } else {
     setStopVideo();
-    myVideoStream.getVideoTracks()[0].enabled = true;
+    videoStream.getVideoTracks()[0].enabled = true;
   }
 };
 
 const setMuteButton = () => {
-  const html = `
+  const content = `
     <i class="fas fa-microphone"></i>
     <span>Mute</span>
   `;
-  document.querySelector(".muteBTN").innerHTML = html;
+  document.querySelector(".muteBTN").innerHTML = content;
 };
 
 const setUnmuteButton = () => {
-  const html = `
+  const content = `
     <i class="unmute fas fa-microphone-slash"></i>
     <span>Unmute</span>
   `;
-  document.querySelector(".muteBTN").innerHTML = html;
+  document.querySelector(".muteBTN").innerHTML = content;
 };
 
 const setStopVideo = () => {
-  const html = `
+  const content = `
     <i class="fas fa-video"></i>
     <span>Stop Video</span>
   `;
-  document.querySelector(".videoBTN").innerHTML = html;
+  document.querySelector(".videoBTN").innerHTML = content;
 };
 
 const setPlayVideo = () => {
-  const html = `
+  const content = `
   <i class="stop fas fa-video-slash"></i>
     <span>Play Video</span>
   `;
-  document.querySelector(".videoBTN").innerHTML = html;
+  document.querySelector(".videoBTN").innerHTML = content;
 };
 
 let [seconds, minutes, hours] = [0, 0, 0];
