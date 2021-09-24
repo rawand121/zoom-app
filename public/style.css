@@ -98,7 +98,8 @@ body {
 .sendNewMessage input {
   background-color: transparent;
   padding: 10px;
-  border: none;
+  border: 2px solid #333;
+  border-radius: 10px;
   color: #1f1f1f;
 }
 
@@ -150,5 +151,10 @@ hr {
   .mainHomePage:first-child {
     text-align: center;
     margin-top: 30px;
+  }
+
+  .sendNewMessage input {
+    display: block !important;
+    width: 100% !important;
   }
 }
